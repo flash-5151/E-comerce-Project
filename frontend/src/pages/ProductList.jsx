@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useEffect, useState, useContext } from "react";
-import { ProductContext } from "../src/context/ProductContext";
+import { ProductContext } from "../context/ProductContext";
 import ProductCart from "../components/ProductCart";
 
 const ProductList = () => {
