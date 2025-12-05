@@ -13,9 +13,9 @@ const ProductList = () => {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-violet-300 to-purple-400">
-      <h1 className="sticky top-0 z-50 text-3xl font-bold text-center text-white py-4 bg-white/20 backdrop-blur-sm shadow-md">
+      {/* <h1 className="sticky top-0 z-50 text-3xl font-bold text-center text-white py-4 bg-white/20 backdrop-blur-sm shadow-md">
         Product List
-      </h1>
+      </h1> */}
 
       <div className="py-12 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {products.length > 0 ? (

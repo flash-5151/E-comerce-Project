@@ -1,17 +1,27 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";
-import { ProductContext } from "../src/context/ProductContext";
+import { ProductContext } from "../context/ProductContext";
+import { useCart } from "../context/CartContext.jsx";
 
 const ProductDetails = () => {
   const { productId } = useParams();
   const { products } = useContext(ProductContext);
+  const { addToCart } = useCart();
   const BASEURL = import.meta.env.VITE_DJANGO_BASE_URL;
 
   // find the product by ID
   const product = products.find((p) => p.id === Number(productId));
 
   if (!product) return <p>Loading...</p>;
+
+  const handleAddToCart = () => {
+    if (!localStorage.getItem("access_token")) {
+      window.location.href = "/login";
+      return;
+    }
+    addToCart(product.id);
+  };
 
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-4">
@@ -43,20 +53,16 @@ const ProductDetails = () => {
 
           {/* Buttons */}
           <div className="flex gap-4">
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-6 rounded-xl shadow-md transition cursor-pointer">
+            <button
+              onClick={handleAddToCart}
+              className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-6 rounded-xl shadow-md transition cursor-pointer"
+            >
               Add to Cart
             </button>
 
             <button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-xl shadow-md transition cursor-pointer">
               Buy Now
             </button>
-
-            <Link
-              to="/"
-              className="bg-blue-600 hover:bg-blue-800 border-0 text-white font-semibold py-3 px-6 rounded-xl shadow-md  duration-400 ease-in-out cursor-pointer hover:shadow-lg transition-all "
-            >
-              <buttton>Home</buttton>
-            </Link>
           </div>
         </div>
       </div>
