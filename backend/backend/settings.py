@@ -87,13 +87,14 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER':os.getenv('DB_USER'),
-        'PASSWORD':os.getenv('DB_PASSWORD'),
-        'HOST':os.getenv('DB_HOST'),
-        'PORT':os.getenv('DB_PORT'),
+        'NAME': 'ecommerce_local',
+        'USER': 'chakri',
+        'PASSWORD': '1a2b3c4$',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
@@ -141,11 +142,9 @@ ALLOWED_HOSTS = ["*", ".onrender.com"]
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "http://localhost:5174",
-    "http://127.0.0.1:5174",
+    "https://e-comerce-project-psi.vercel.app",
 ]
+
 
 
 CORS_ALLOW_CREDENTIALS = True
