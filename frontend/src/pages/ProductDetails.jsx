@@ -60,9 +60,9 @@ const ProductDetails = () => {
               Add to Cart
             </button>
 
-            <button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-xl shadow-md transition cursor-pointer">
+            {/* <button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-xl shadow-md transition cursor-pointer">
               Buy Now
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

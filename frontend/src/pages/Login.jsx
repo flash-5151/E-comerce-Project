@@ -73,7 +73,17 @@ const Login = () => {
             <span className="text-white">Login</span>
           </button>
         </form>
-        {msg && <p className="mt-2 text-sm text-red-600">{msg}</p>}
+        {msg && (
+          <p
+            className={`mt-2 text-sm ${
+              message.includes("successfully")
+                ? "text-green-500"
+                : "text-red-500"
+            }`}
+          >
+            {msg}
+          </p>
+        )}
         <div className="mt-6">
           Don't have an account ?{""}
           <a href="/signup" className="text-blue-600 ml-2">

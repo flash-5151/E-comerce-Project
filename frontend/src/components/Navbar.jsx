@@ -33,7 +33,7 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <span className="mr-1">Chakri's Cart</span>
+                <span className="mr-1">My Cart</span>
                 <button className="ml-3 " onClick={handleLogout}>
                   Logout
                 </button>
@@ -41,15 +41,16 @@ const Navbar = () => {
             )}
           </div>
         </span>
-
-        <span className="relative inline-block mr-0">
-          🛒
-          {cartCount > 0 && (
-            <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs min-w-[18px] h-[18px] px-1 flex items-center justify-center rounded-full">
-              {cartCount}
-            </span>
-          )}
-        </span>
+        <Link to="/cart" className="p-0.5">
+          <span className="relative inline-block mr-0">
+            🛒
+            {cartCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs min-w-[18px] h-[18px] px-1 flex items-center justify-center rounded-full">
+                {cartCount}
+              </span>
+            )}
+          </span>
+        </Link>
       </div>
     </nav>
   );

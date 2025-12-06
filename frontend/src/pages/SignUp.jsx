@@ -104,7 +104,11 @@ const SignUp = () => {
       </form>
 
       {msg && (
-        <p className="mt-3 text-sm text-center text-red-600 animate-pulse">
+        <p
+          className={`mt-2 text-sm ${
+            message.includes("successfully") ? "text-green-500" : "text-red-500"
+          }`}
+        >
           {msg}
         </p>
       )}
