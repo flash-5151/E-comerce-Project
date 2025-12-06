@@ -106,7 +106,7 @@ const SignUp = () => {
       {msg && (
         <p
           className={`mt-2 text-sm ${
-            msg.includes("successfully") ? "text-green-500" : "text-red-500"
+            msg.includes("successful!") ? "text-green-500" : "text-red-500"
           }`}
         >
           {msg}
