@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useState, useEffect } from "react";
-import { authFetch, getAccessToken } from "../utils/auth";
+import { authFetch, getAccessToken, clearToken } from "../utils/auth";
 import React from "react";
 
 const CartContext = createContext();
@@ -10,21 +10,38 @@ export const CartProvider = ({ children }) => {
   const [total, setTotal] = useState(0);
   const BASEURL = import.meta.env.VITE_DJANGO_BASE_URL;
   useEffect(() => {
+    const token = getAccessToken();
+
+    if (!token) {
+      console.log("No token found. Skipping cart fetch.");
+      return;
+    }
+
     fetchCart();
   }, []);
 
   const fetchCart = async () => {
+    const token = getAccessToken();
+
+    if (!token) {
+      console.log("No token, user not logged in");
+      return;
+    }
+
     try {
       const res = await authFetch(`${BASEURL}/api/cart/`);
+
+      if (res.status === 401) {
+        clearToken();
+        window.location.href = "/login";
+        return;
+      }
+
       const data = await res.json();
       SetCartItems(data.items || []);
       setTotal(data.total || 0);
     } catch (error) {
-      console.log("error fetching cart", error);
-      if (error.message === "Unauthorized: No access token found.") {
-        clearToken();
-        window.location.href = "/login"; // Redirect to login if unauthorized
-      }
+      console.log("Error fetching cart:", error);
     }
   };
 
