@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import get_catogories,get_products,get_details,get_cart,add_to_cart,remove_from_cart,update_cart_quantity,create_orders,register_view
+from .views import get_catogories,get_products,get_details,get_cart,add_to_cart,remove_from_cart,update_cart_quantity,create_orders,register_view,create_admin
 from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
 
 urlpatterns=[
@@ -14,4 +14,6 @@ urlpatterns=[
   path('cart/remove/',remove_from_cart),
   path('cart/update/',update_cart_quantity),
   path('orders/create/',create_orders),
+  path("create-admin/", create_admin),
+
 ]

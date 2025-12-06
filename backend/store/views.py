@@ -7,6 +7,9 @@ from .serializers import RegisterSerializer,UserSerializer
 from .models import Product,Catogory,CartItem,Cart,Order,OrderItem
 from .serializers import ProductSerializer,CatogorySerializer,CartItemSerializer,CartSerializer
 from rest_framework import status
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+
 
 @api_view(['GET'])
 def get_products(request):
@@ -139,3 +142,15 @@ def register_view(request):
     return Response({'message':'User created successfully','user':UserSerializer(user).data},status=status.HTTP_201_CREATED)
   return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 
+
+def create_admin(request):
+    if User.objects.filter(username="admin").exists():
+        return HttpResponse("Admin already exists")
+
+    User.objects.create_superuser(
+        username="admin",
+        email="admin@example.com",
+        password="Admin@123"
+    )
+
+    return HttpResponse("Admin created successfully")
