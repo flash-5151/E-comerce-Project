@@ -36,7 +36,7 @@ const SignUp = () => {
       const data = await response.json();
 
       if (response.ok) {
-        setMsg("Signup successful! Redirecting to login...");
+        setMsg("Signup successfull Redirecting to login...");
         setTimeout(() => {
           navigate("/");
         }, 1000);
@@ -106,7 +106,7 @@ const SignUp = () => {
       {msg && (
         <p
           className={`mt-2 text-sm ${
-            msg.includes("successful!") ? "text-green-500" : "text-red-500"
+            msg.includes("successfull") ? "text-green-500" : "text-red-500"
           }`}
         >
           {msg}

@@ -28,7 +28,7 @@ const Login = () => {
       const data = await respose.json();
       if (respose.ok) {
         saveToken(data);
-        setMsg("Login successful! redirecting...");
+        setMsg("Login successfull redirecting...");
         setTimeout(() => {
           navigate("/");
         }, 800);
@@ -76,7 +76,7 @@ const Login = () => {
         {msg && (
           <p
             className={`mt-2 text-sm ${
-              msg.includes("successful!") ? "text-green-500" : "text-red-500"
+              msg.includes("successfull") ? "text-green-500" : "text-red-500"
             }`}
           >
             {msg}
