@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import dj_database_url
 from pathlib import Path
 import os
 from dotenv import load_dotenv
@@ -94,6 +95,10 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+DATABASES['default']=dj_database_url.parse("postgresql://chakri:XyNo04dFSpzKj5EItlXrKvfSQOJ6Qu3b@dpg-d4ph4kh5pdvs7385garg-a.virginia-postgres.render.com/ecommerce_anos")
+
+
 
 
 
