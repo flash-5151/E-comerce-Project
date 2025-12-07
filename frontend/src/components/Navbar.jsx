@@ -33,7 +33,6 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <span className="mr-1">My Cart</span>
                 <button className="ml-3 " onClick={handleLogout}>
                   Logout
                 </button>
