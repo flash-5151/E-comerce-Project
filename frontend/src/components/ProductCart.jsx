@@ -10,7 +10,7 @@ const ProductCart = ({ product }) => {
                    hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
       >
         <img
-          src={`${BASEURL}${product.image}`}
+          src={product.image}
           alt={product.name}
           className="w-full h-48 object-contain rounded-xl shadow-lg mb-2.5 
            transition-all duration-500 hover:scale-110 hover:shadow-2xl"
