@@ -29,7 +29,7 @@ const ProductDetails = () => {
         {/* LEFT: Product Image */}
         <div className="flex justify-center items-center">
           <img
-            src={product.image}
+            src={`${BASEURL}${product.image}`}
             alt={product.name}
             className="w-full max-w-sm object-contain rounded-xl shadow-md 
           transition-transform duration-300 hover:scale-105"
