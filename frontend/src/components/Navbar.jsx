@@ -22,26 +22,27 @@ const Navbar = () => {
         Home
       </Link>
 
-      <div className="cursor-pointer font-bold px-2  sm:px-10 text-2xl flex items-center gap-2">
-        <span className="mr-0">
-          <div className="cursor-pointer font-bold px-2 sm:px-16 text-2xl ">
-            {!isLoggedIn ? (
-              <>
-                <Link to="/login" className="ml-3 mr-0">
-                  Login
-                </Link>
-              </>
-            ) : (
-              <>
-                <button className="ml-3 mr-0" onClick={handleLogout}>
-                  Logout
-                </button>
-              </>
-            )}
-          </div>
-        </span>
+      <div className=" font-bold px-2  sm:px-10 text-2xl flex items-center gap-2">
+        <div className="cursor-pointer font-bold px-2 sm:px-16 text-2xl ">
+          {!isLoggedIn ? (
+            <>
+              <Link to="/login" className="ml-3 mr-0 cursor-pointer">
+                Login
+              </Link>
+            </>
+          ) : (
+            <>
+              <button
+                className="ml-3 mr-0 cursor-pointer"
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
+            </>
+          )}
+        </div>
         <Link to="/cart" className="p-0 ml-0">
-          <span className="relative inline-block ml-1">
+          <span className="relative inline-block ml-1 cursor-pointer">
             🛒
             {cartCount > 0 && (
               <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs min-w-[18px] h-[18px] px-1 flex items-center justify-center rounded-full">
