@@ -4,7 +4,7 @@ import { useCart } from "../context/CartContext.jsx";
 import { getAccessToken, clearToken } from "../utils/auth.js";
 
 const Navbar = () => {
-  const { isdark, setDark } = useState(false);
+  const { isdark, SetDark } = useState(false);
   const { cartItems } = useCart();
   const navigate = useNavigate();
 
@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   const toggleDark = () => {
-    setDark(!isdark);
+    SetDark(!isdark);
   };
 
   return (
