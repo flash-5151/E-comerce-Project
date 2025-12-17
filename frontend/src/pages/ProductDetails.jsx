@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";
 import { ProductContext } from "../context/ProductContext";
 import { useCart } from "../context/CartContext.jsx";
+import Spinner from "../utils/Spinner";
 
 const ProductDetails = () => {
   const { productId } = useParams();
