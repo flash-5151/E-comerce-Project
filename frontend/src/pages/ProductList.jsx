@@ -13,19 +13,21 @@ const ProductList = () => {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-violet-300 to-purple-400">
-      {/* <h1 className="sticky top-0 z-50 text-3xl font-bold text-center text-white py-4 bg-white/20 backdrop-blur-sm shadow-md">
-        Product List
-      </h1> */}
-
       <div className="py-12 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {products.length > 0 ? (
           products.map((product) => (
             <ProductCart key={product.id} product={product} />
           ))
         ) : (
-          <p className="text-center col-span-full text-white">
-            No Products available
-          </p>
+          // <div className="text-center col-span-full text-white">
+          //   No Products available
+
+          // </div>
+          <div className="animate-pulse space-y-3">
+            <div className="h-48 bg-gray-300 rounded"></div>
+            <div className="h-4 bg-gray-300 rounded w-3/4"></div>
+            <div className="h-4 bg-gray-300 rounded w-1/2"></div>
+          </div>
         )}
       </div>
     </div>
