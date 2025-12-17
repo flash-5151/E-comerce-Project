@@ -19,11 +19,11 @@ const Navbar = () => {
 
   const toggleDark = () => {
     SetDark(!isdark);
-    if (!isdark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    // if (!isdark) {
+    //   document.documentElement.classList.add("dark");
+    // } else {
+    //   document.documentElement.classList.remove("dark");
+    // }
   };
 
   return (
