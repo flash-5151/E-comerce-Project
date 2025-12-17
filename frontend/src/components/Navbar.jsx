@@ -4,7 +4,7 @@ import { useCart } from "../context/CartContext.jsx";
 import { getAccessToken, clearToken } from "../utils/auth.js";
 
 const Navbar = () => {
-  const { isdark, SetDark } = useState(false);
+  const [isdark, SetDark] = useState(false);
   const { cartItems } = useCart();
   const navigate = useNavigate();
 
@@ -19,6 +19,11 @@ const Navbar = () => {
 
   const toggleDark = () => {
     SetDark(!isdark);
+    if (!isdark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   };
 
   return (
