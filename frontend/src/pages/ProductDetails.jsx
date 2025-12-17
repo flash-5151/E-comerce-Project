@@ -13,7 +13,14 @@ const ProductDetails = () => {
   // find the product by ID
   const product = products.find((p) => p.id === Number(productId));
 
-  if (!product) return <p>Loading...</p>;
+  if (!product)
+    return (
+      <div className="flex items-center justify-center py-10">
+        <div
+          className={`h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600`}
+        />
+      </div>
+    );
 
   const handleAddToCart = () => {
     if (!localStorage.getItem("access_token")) {
@@ -59,10 +66,6 @@ const ProductDetails = () => {
             >
               Add to Cart
             </button>
-
-            {/* <button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-xl shadow-md transition cursor-pointer">
-              Buy Now
-            </button> */}
           </div>
         </div>
       </div>
