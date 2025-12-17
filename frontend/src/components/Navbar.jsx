@@ -24,16 +24,16 @@ const Navbar = () => {
 
       <div className="cursor-pointer font-bold  sm:px-10 text-2xl flex items-center gap-2">
         <span>
-          <div className="cursor-pointer font-bold px-4 sm:px-16 text-2xl ">
+          <div className="cursor-pointer font-bold px-2 sm:px-16 text-2xl ">
             {!isLoggedIn ? (
               <>
-                <Link to="/login" className="mr-3">
+                <Link to="/login" className="ml-3 mr-0">
                   Login
                 </Link>
               </>
             ) : (
               <>
-                <button className="ml-3 " onClick={handleLogout}>
+                <button className="ml-3 mr-0" onClick={handleLogout}>
                   Logout
                 </button>
               </>
