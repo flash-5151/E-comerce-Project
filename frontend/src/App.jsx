@@ -12,7 +12,7 @@ import Spinner from "./utils/Spinner";
 
 const App = () => {
   return (
-    <div>
+    <div className="bg-(--bg) text-(--text) dark:bg-(--bg) dark:text-(--text)">
       <BrowserRouter>
         <div className="mb-14">
           <Navbar />

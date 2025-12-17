@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext.jsx";
 import { getAccessToken, clearToken } from "../utils/auth.js";
 
 const Navbar = () => {
+  const { isdark, setDark } = useState(false);
   const { cartItems } = useCart();
   const navigate = useNavigate();
 
@@ -16,6 +17,10 @@ const Navbar = () => {
     navigate("/login");
   };
 
+  const toggleDark = () => {
+    setDark(!isdark);
+  };
+
   return (
     <nav className="fixed top-0 left-0 w-full h-16 bg-white font-bold shadow-md z-50 flex items-center justify-between">
       <Link to="/" className="cursor-pointer font-bold px-4 sm:px-16 text-2xl">
@@ -23,7 +28,11 @@ const Navbar = () => {
       </Link>
 
       <div className=" font-bold px-2  sm:px-10 text-2xl flex items-center gap-2">
-        <div className="cursor-pointer font-bold px-2 sm:px-16 text-2xl ">
+        <button onClick={toggleDark} className="cursor-pointer ml-2">
+          {isdark ? "🌙" : "☀️"}
+        </button>
+
+        <div className="font-bold px-2 sm:px-16 text-2xl ">
           {!isLoggedIn ? (
             <>
               <Link to="/login" className="ml-3 mr-0 cursor-pointer">
