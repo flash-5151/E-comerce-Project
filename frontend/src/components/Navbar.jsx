@@ -40,7 +40,7 @@ const Navbar = () => {
             )}
           </div>
         </span>
-        <Link to="/cart" className="p-0.5">
+        <Link to="/cart" className="p-0">
           <span className="relative inline-block mr-0">
             🛒
             {cartCount > 0 && (
