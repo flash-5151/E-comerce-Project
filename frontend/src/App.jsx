@@ -8,6 +8,7 @@ import CheckoutPage from "./pages/CheckoutPage";
 import PrivateRouter from "./components/PrivateRouter";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
+import Spinner from "./utils/Spinner";
 
 const App = () => {
   return (

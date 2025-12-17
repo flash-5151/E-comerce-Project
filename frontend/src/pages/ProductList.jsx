@@ -3,13 +3,13 @@ import React from "react";
 import { useEffect, useState, useContext } from "react";
 import { ProductContext } from "../context/ProductContext";
 import ProductCart from "../components/ProductCart";
+import Spinner from "../utils/Spinner";
 
 const ProductList = () => {
-  const { products } = useContext(ProductContext);
-
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const BASEURL = import.meta.env.VITE_DJANGO_BASE_URL;
+  const { products, loading, error } = useContext(ProductContext);
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="min-h-screen bg-linear-to-br from-violet-300 to-purple-400">
@@ -19,15 +19,9 @@ const ProductList = () => {
             <ProductCart key={product.id} product={product} />
           ))
         ) : (
-          // <div className="text-center col-span-full text-white">
-          //   No Products available
-
-          // </div>
-          <div className="flex items-center justify-center py-10">
-            <div
-              className={`h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600`}
-            />
-          </div>
+          <p className="text-center col-span-full text-white">
+            No Products available
+          </p>
         )}
       </div>
     </div>

@@ -13,14 +13,7 @@ const ProductDetails = () => {
   // find the product by ID
   const product = products.find((p) => p.id === Number(productId));
 
-  if (!product)
-    return (
-      <div className="flex items-center justify-center py-10">
-        <div
-          className={`h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600`}
-        />
-      </div>
-    );
+  if (!product) return <Spinner />;
 
   const handleAddToCart = () => {
     if (!localStorage.getItem("access_token")) {
