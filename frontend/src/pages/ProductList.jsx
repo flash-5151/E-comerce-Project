@@ -23,10 +23,10 @@ const ProductList = () => {
           //   No Products available
 
           // </div>
-          <div className="animate-pulse space-y-3">
-            <div className="h-48 bg-gray-300 rounded"></div>
-            <div className="h-4 bg-gray-300 rounded w-3/4"></div>
-            <div className="h-4 bg-gray-300 rounded w-1/2"></div>
+          <div className="flex items-center justify-center py-10">
+            <div
+              className={`h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600`}
+            />
           </div>
         )}
       </div>
