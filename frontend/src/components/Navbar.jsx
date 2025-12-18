@@ -4,7 +4,6 @@ import { useCart } from "../context/CartContext.jsx";
 import { getAccessToken, clearToken } from "../utils/auth.js";
 
 const Navbar = () => {
-  const [isdark, SetDark] = useState(false);
   const { cartItems } = useCart();
   const navigate = useNavigate();
 
@@ -18,12 +17,7 @@ const Navbar = () => {
   };
 
   const toggleDark = () => {
-    SetDark(!isdark);
-    // if (!isdark) {
-    //   document.documentElement.classList.add("dark");
-    // } else {
-    //   document.documentElement.classList.remove("dark");
-    // }
+    document.documentElement.classList.toggle("dark");
   };
 
   return (
@@ -34,7 +28,8 @@ const Navbar = () => {
 
       <div className=" font-bold px-2  sm:px-10 text-2xl flex items-center gap-2">
         <button onClick={toggleDark} className="cursor-pointer ml-2">
-          {isdark ? "🌙" : "☀️"}
+          🌙
+          {/* {isdark ? "🌙" : "☀️"} */}
         </button>
 
         <div className="font-bold px-2 sm:px-16 text-2xl ">
