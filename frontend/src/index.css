@@ -10,7 +10,7 @@ body {
   font-style: normal;
 }
 
-@theme {
+/* @theme {
   --color-background: var(--background);
   --color-border: var(--border);
   --color-text: var(--text);
@@ -27,4 +27,4 @@ body {
   --border: rgb(253, 253, 253);
   --text: #fff;
   --muted: #7b7b7b;
-}
+} */

@@ -23,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full h-16 bg-white font-bold shadow-md z-50 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 w-full h-16 bg-white font-bold shadow-md z-50 flex items-center justify-between dark:bg-black dark:text-white ">
       <Link to="/" className="cursor-pointer font-bold px-4 sm:px-16 text-2xl">
         Home
       </Link>
