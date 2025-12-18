@@ -29,10 +29,6 @@ const Navbar = () => {
       </Link>
 
       <div className=" font-bold px-2  sm:px-10 text-2xl flex items-center gap-2">
-        {/* <button onClick={toggleDark} className="cursor-pointer ml-2">
-          {isdark ? "🌙" : "☀️"}
-        </button> */}
-
         <div className="font-bold px-2 sm:px-16 text-2xl ">
           {!isLoggedIn ? (
             <>
