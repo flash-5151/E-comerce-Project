@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ya_)(#0_u3k8z+93ilj=t=6wt^aex1%3scycrnl#bv16w=qt=a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 # ALLOWED_HOSTS = []
 
@@ -85,19 +85,26 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ecommerce_local',
+#         'USER': 'chakri',
+#         'PASSWORD': '1a2b3c4$',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+# # DATABASES['default']=dj_database_url.parse("postgresql://chakri:XyNo04dFSpzKj5EItlXrKvfSQOJ6Qu3b@dpg-d4ph4kh5pdvs7385garg-a.virginia-postgres.render.com/ecommerce_anos")
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ecommerce_local',
-        'USER': 'chakri',
-        'PASSWORD': '1a2b3c4$',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.parse(
+        os.getenv("DATABASE_URL"),
+        conn_max_age=0,
+        ssl_require=True
+    )
 }
-
-DATABASES['default']=dj_database_url.parse("postgresql://chakri:XyNo04dFSpzKj5EItlXrKvfSQOJ6Qu3b@dpg-d4ph4kh5pdvs7385garg-a.virginia-postgres.render.com/ecommerce_anos")
-
 
 
 
@@ -143,16 +150,20 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ALLOWED_HOSTS = ["*", ".onrender.com"]
-
-
-CORS_ALLOWED_ORIGINS = [
-    "https://e-comerce-project-psi.vercel.app",
+ALLOWED_HOSTS = [
+    "e-comerce-project-3.onrender.com",
+    "localhost",
+    "127.0.0.1",
 ]
 
 
+# CORS_ALLOWED_ORIGINS = [
+#     "https://e-comerce-project-psi.vercel.app",
+# ]
+# CORS_ALLOW_CREDENTIALS = True
 
-CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = False
 
 CORS_ALLOW_HEADERS = [
     "accept",
