@@ -16,6 +16,7 @@ ALLOWED_HOSTS = [
     ".onrender.com",
     "localhost",
     "127.0.0.1",
+    'e-commerce-project-63yf.onrender.com',
 ]
 
 INSTALLED_APPS = [
@@ -101,6 +102,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS — unchanged logic
 CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "https://e-comerce-project-psi.vercel.app",
+]
+
 CORS_ALLOW_CREDENTIALS = False
 
 MEDIA_URL = '/media/'
