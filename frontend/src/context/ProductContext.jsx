@@ -17,6 +17,7 @@ export const ProductProvider = ({ children }) => {
       .catch((err) => setError(err))
       .finally(() => setLoading(false));
   }, []);
+  console.log(products);
 
   return (
     <ProductContext.Provider value={{ products, loading, error }}>

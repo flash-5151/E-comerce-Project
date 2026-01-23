@@ -46,7 +46,7 @@ const Navbar = () => {
           <span className="relative inline-block ml-1 cursor-pointer ">
             🛒
             {cartCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs min-w-[18px] h-[18px] px-1 flex items-center justify-center rounded-full">
+              <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs min-w-4.5 h-4.5 px-1 flex items-center justify-center rounded-full">
                 {cartCount}
               </span>
             )}
