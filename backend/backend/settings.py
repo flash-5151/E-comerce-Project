@@ -82,29 +82,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'ecommerce_local',
-#         'USER': 'chakri',
-#         'PASSWORD': '1a2b3c4$',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
-
-# # DATABASES['default']=dj_database_url.parse("postgresql://chakri:XyNo04dFSpzKj5EItlXrKvfSQOJ6Qu3b@dpg-d4ph4kh5pdvs7385garg-a.virginia-postgres.render.com/ecommerce_anos")
+#database
 
 DATABASES = {
-    'default': dj_database_url.parse(
-        os.getenv("DATABASE_URL"),
-        conn_max_age=0,
-        ssl_require=True
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'HGeZbsLdRamzqvyUlEDXYuXAVrcQFccE',
+        'HOST': 'shortline.proxy.rlwy.net',
+        'PORT': '32493',
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
+    }
 }
+
+
 
 
 
