@@ -1,1 +1,5 @@
-{}
+{
+  "dependencies": {
+    "whitenoise": "^0.0.1"
+  }
+}
